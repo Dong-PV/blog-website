@@ -1,0 +1,27 @@
+<!-- /views/index.ejs -->
+<div class="author">
+  <h1 class="author__heading">Phan V. Dong</h1>
+  <p class="author__body">Blogger & Web Dev</p>
+</div>
+<img src="/img/hero-image.webp" alt="person looking out thru window" class="hero-image" width="981" height="528">
+<section class="articles">
+  <h2 class="articles__heading">Latest Posts</h2>
+  <ul class="article-ul">
+    <% data.forEach(post=> { %>
+      <li>
+        <a href="/post/<%= post._id %>">
+          <span>
+            <%= post.title %>
+          </span>
+          <span class="article-list__date">
+            <%= post.date_created.toDateString() %>
+          </span>
+        </a>
+      </li>
+      <% }) %>
+  </ul>
+  <!-- ./server/routes/main.js -->
+  <% if (next_page !==null) { %>
+    <a href="/?page=<%= next_page %>" class="pagination">&#128315; Older Posts &#128315; </a>
+    <% } %>
+</section>

@@ -1,0 +1,2 @@
+mongodump --uri="mongodb://localhost:27017/blog" --out="C:\Users\Kozz\!K-Desktop\Backup"
+mongorestore --uri="mongodb://localhost:27017/blog2" "C:\Users\Kozz\!K-Desktop\Backup"
